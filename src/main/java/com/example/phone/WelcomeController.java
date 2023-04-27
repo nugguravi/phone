@@ -12,4 +12,10 @@ public class WelcomeController {
 
             return "Welcome:"+name;
         }
+
+    @GetMapping("/hello")
+    public String hello() {
+
+        return "hello:";
+    }
 }
