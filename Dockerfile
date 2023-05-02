@@ -6,8 +6,8 @@ FROM openjdk:11
 
 EXPOSE 8085
 
-RUN mkdir -p /app
+RUN mkdir app
 
-ADD build/libs/phone-0.0.1-SNAPSHOT.jar /app/phone-0.0.1-SNAPSHOT.jar
+ADD build/libs/phone-0.0.1-SNAPSHOT.jar app/phone-0.0.1-SNAPSHOT.jar
 
 ENTRYPOINT ["java", "-jar", "/app/phone-0.0.1-SNAPSHOT.jar"]
