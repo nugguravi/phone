@@ -8,6 +8,6 @@ EXPOSE 8085
 
 RUN mkdir -p /app
 
-mv build/libs/phone-0.0.1-SNAPSHOT.jar app.jar
+ADD build/libs/phone-0.0.1-SNAPSHOT.jar /app/phone-0.0.1-SNAPSHOT
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/phone-0.0.1-SNAPSHOT.jar"]
