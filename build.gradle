@@ -14,6 +14,23 @@ configurations {
 	}
 }
 
+String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'tkgregory'
+String imageName = "${dockerHubUsernameProperty}/spring-boot-api-example:$version"
+
+docker {
+	name imageName
+	files "build/libs/${bootJar.archiveFileName.get()}"
+	buildArgs([JAR_FILE: bootJar.archiveFileName.get()])
+}
+
+dockerRun {
+	name project.name
+	image imageName
+	ports '8085:8085'
+	clean true
+}
+
+
 repositories {
 	mavenCentral()
 }
