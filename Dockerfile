@@ -5,9 +5,9 @@ FROM openjdk:11
 #RUN gradle build --no-daemon
 
 EXPOSE 8085
-pwd
-RUN mkdir app
 
-ADD var/lib/jenkins/workspace/mobile/build/libs/phone-0.0.1-SNAPSHOT.jar app/phone-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 ENTRYPOINT ["java", "-jar", "/app/phone-0.0.1-SNAPSHOT.jar"]
