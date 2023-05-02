@@ -2,6 +2,9 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.11'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'com.palantir.docker' version '0.34.0'
+	id 'com.palantir.docker-run' version '0.34.0'
+	id 'jp.classmethod.aws.reboot.cloudformation' version '0.45'
 }
 
 group = 'com.example'
@@ -20,7 +23,7 @@ String imageName = "${dockerHubUsernameProperty}/spring-boot-api-example:$versio
 docker {
 	name imageName
 	files "build/libs/${bootJar.archiveFileName.get()}"
-	buildArgs([JAR_FILE: bootJar.archiveFileName.get()])
+	buildArgs([JAR_FILE: bootJar. 	.get()])
 }
 
 dockerRun {
