@@ -17,8 +17,8 @@ configurations {
 	}
 }
 
-String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'tkgregory'
-String imageName = "${dockerHubUsernameProperty}/spring-boot-api-example:$version"
+String dockerHubUsernameProperty = 'phone'
+String imageName = "${dockerHubUsernameProperty}/phone-example:$version"
 
 docker {
 	name imageName
