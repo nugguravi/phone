@@ -4,8 +4,8 @@ FROM openjdk:11
 #WORKDIR /home/gradle/src
 #RUN gradle build --no-daemon
 
-EXPOSE 8085
+EXPOSE 8086
 
-ARG JAR_FILE
+ARG JAR_FILE=build/libs/phone-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
