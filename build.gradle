@@ -8,7 +8,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1-snapshot'
 sourceCompatibility = '11'
 
 configurations {
@@ -18,7 +18,7 @@ configurations {
 }
 
 String dockerHubUsernameProperty = 'phone'
-String imageName = "${dockerHubUsernameProperty}/phone-example:$version"
+String imageName = "phone-$version"
 
 docker {
 	name imageName
