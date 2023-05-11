@@ -18,7 +18,7 @@ configurations {
 }
 
 String dockerHubUsernameProperty = 'phone'
-String imageName = "phone-$version"
+String imageName = "phone/phone-$version"
 
 docker {
 	name imageName
