@@ -33,7 +33,6 @@ dockerRun {
 	clean true
 }
 
-
 repositories {
 	mavenCentral()
 }
